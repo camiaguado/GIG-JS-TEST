@@ -91,3 +91,50 @@ html.listControler #view-container{
 	float:right;
 	font-size: 1.75em;
 }
+
+/*Form contact style: */
+
+#form_contact input{
+	border: 1px solid #cccccc;
+	border-radius: 6px;
+	box-sizing: border-box;
+	front-size: 20px;
+	margin: 10px 0;
+	padding: 4px 10px;
+	width: 100%;
+}
+
+#form_contact button{
+	background-color: #ffffff;
+	border: 1px soild #fb7d29;
+	border-radius: 6px;
+	font-size: 20px;
+	margin: 0px 10px;
+	color: #fb7d29;
+	cursor: pointer;
+}
+#form_contact button:hover{
+	color: #d4482f;
+}
+#form_contact button i{
+	font-size: 1.5em;
+	margin-left: 10px;
+}
+.styled-select{
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	height: 34px;
+	overflow: hidden;
+	width: 100%;
+	margin-top: 10px;
+}
+.styled-select select{
+	background: transparent none repeat scroll 0 0;
+	border: 0 none;
+	border-radius: 0;
+	font-size: 20px;
+	height: 34px;
+	line-height: 1;
+	padding: 5px;
+	width: 105%;
+}
