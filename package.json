@@ -1,0 +1,19 @@
+{
+  "name": "gig-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-animate": "^1.7.5",
+    "angular-route": "^1.7.5",
+    "browserify": "^16.2.3",
+    "country-list": "^2.1.0",
+    "lodash": "^4.17.11"
+  }
+}
