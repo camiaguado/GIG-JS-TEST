@@ -3,10 +3,21 @@
 <html>
 	<head>
 		<title>Address Book</title>
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel='stylesheet' href='node_modules/bootstrap/dist/css/bootstrap.min.css' />
+	</head>
+<body ng-app="addressApp" ng-controller="mainController">
+	<div class="container">
+		<div class="page-header">
+			<h1> Address Book </h1>
+		</div>
+		<div class='row'>
+                <div class='col-sm-12' ng-view></div>
+            </div>
 
+	</div>
+
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="node_modules/angular/angular.min.js"></script>
 		<script src="node_modules/angular-route/angular-route.min.js"></script>
 		<script src="node_modules/angular-animate/angular-animate.min.js"></script>
@@ -14,8 +25,5 @@
 		<script src="node_modules/country-list/bundle.js"></script>
 		<script src="js/models.js"></script>
 		<script src="js/main.js"></script>
-	</head>
-<body ng-app="addressApp" ng-controller="mainController">
-	<div ng-view id="view-container"></div>
 </body>
 </html>

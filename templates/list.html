@@ -1,20 +1,25 @@
 <div class="view-header">
-	<h1> Lists </h1>
-	<a ng-click="goForm(add)" class="btn_plus btn_title" title="Create new contact"><i class="fas fa-plus-square fa-2x"></i></a>
+	<h2> Lists of contacts</h2>
+	<p><input type='search' class='form-control' placeholder='Search' ng-model='query' /></p>
 </div>
-<div class="list_wrapper">
-	<ul>
-		<li ng-repeat="contact in contacts">
-			<div class="contact_data">
-				{{contact.first_name}} {{contact.last_name}} - {{contact.country}} 
-			</div>
-			<div class="contact_mail">
-				<a ng-click="goForm(contact.id)" title="Edit contact"><i class="fas fa-pencil-alt btn_edit"></i></a>
-				<a href="mailto:{{contact.email}}" title="send email to contact"><i class="fas fa-trash"></i></a>
-			</div>
-		</li>
-	</ul>
-</div>
-<div class="button_bar">
 
-</div>
+<table class='table table-hover table-bordered'>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th><a ng-click="goForm(add)" class="btn_plus btn_title" title="Create new contact"><button type="button" class="btn btn-outline-success">Create Contact</button></a></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-click='show(contact.id)' ng-repeat='contact in contacts | filter: query | orderBy: sort.field : sort.order'>
+            <td> {{contact.first_name}} </td>
+            <td> {{contact.last_name}} </td>
+            <td> {{contact.email}} </td>
+            <td> {{contact.country}} </td>
+	        <td><button ng-click="goForm(contact.id)" type="button" class="btn btn-outline-warning">Edit</button>
+        </tr>
+    </tbody>
+</table>

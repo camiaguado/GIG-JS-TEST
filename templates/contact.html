@@ -1,26 +1,42 @@
-<div class="view-header">
-	<h1> Contact </h1>
-	<a class="btn_list btn_title" title="Go to contacts list"><i class="fas fa-list-ul"></i></a>
-</div>
-<form id="form_contact" name="form_contact">
-	<div class="form-group">
-		<input placeholder="First name" name="first_name" type="text" maxlength="36">
-	</div>
-	<div class="form-group">
-		<input placeholder="Last name" name="last_name" type="text" maxlength="36">
-	</div>
-	<div class="form-group">
-		<input placeholder="Email" name="email" type="text" maxlength="36">
-	</div>
-	<div class="styled-selected">
-		<select value="" disabled selected> Select the country </select>
-	</div>
 
-<div class="button_bar">
-	<button name="btn_add" title="Save new contact"> Add <i class="fas fa-plus"></i></button>
-	<button name="btn_edit" title="Update contact"> Edit <i class="far fa-edit"></i></button>
-	<button name="btn_delete" title="Delete contact"> Delete <i class="fas fa-trash"></i></button>
-</div>
 
-<form>
-	</form>
+<button type="button" class="btn btn-outline-secondary" ng-click="goList()">Go back</button>
+
+<legend>Contact</legend>
+
+<form name="userForm" ng-submit="save(userForm.$valid)" novalidate>
+
+        <div class="form-group" ng-class="{ 'has-error' : userForm.first_name.$invalid && !userForm.first_name.$pristine }">
+            <label>First Name *</label>
+            <input type="text" name="first_name" class="form-control" ng-model="contact.first_name" required>
+            <p ng-show="userForm.first_name.$error.required && userForm.first_name.$touched" class="help-block">Name is required.</p>
+        </div>
+        
+        <div class="form-group" ng-class="{ 'has-error' : userForm.last_name.$invalid && !userForm.last_name.$pristine }">
+            <label>Last Name *</label>
+            <input type="text" name="last_name" class="form-control" ng-model="contact.last_name" required>
+            <p ng-show="userForm.last_name.$error.required && userForm.last_name.$touched" class="help-block">Last name is required.</p>
+        </div>
+        
+        <div class="form-group" ng-class="{ 'has-error' : userForm.last_name.$invalid && !userForm.last_name.$pristine }">
+            <label>Email *</label>
+            <input type="email" name="email" class="form-control" ng-model="contact.email" required>
+            <p class="invalid-feedback" ng-show="userForm.email.$error.required && userForm.email.$touched">Email is required.</p>
+            <p class="invalid-feedback" ng-show="userForm.email.$error.email && userForm.email.$touched">Enter a valid email.</p>
+        </div>
+
+        <div class="form-group">
+	      <label>Country</label>
+		      <select class="custom-select" name="country" ng-model="contact.country" required>
+		        <option value="" disabled selected="">Select the country</option>
+		        <option ng-repeat="code in countries.getCodes()" value="{{code}}">{{countries.getName(code)}}</option>
+		      </select>
+   		</div>
+   		<p ng-show="userForm.country.$error.required && userForm.country.$touched" class="error-block">The country is required.</p>
+        
+        <button type="submit" ng-show="new && userForm.$valid" ng-click='add(contact.id)' class="btn btn-primary">Add</button>
+        <button type="submit" ng-show="!new && userForm.$valid" ng-click='update(contact.id)' class="btn btn-primary">Edit</button>
+        <button type="submit" ng-show="!new" ng-click='delete(contact.id)' class="btn btn-primary">Delete</button>
+        
+</form>
+
