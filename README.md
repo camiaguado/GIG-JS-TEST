@@ -20,5 +20,6 @@ Install the dependencies and start the server.
 $ npm install
 $ node server.js
 ```
-[http://localhost:3002][PlDb]
+
+[Localhost](http://localhost:3002)
 
