@@ -21,14 +21,14 @@
         <div class="form-group" ng-class="{ 'has-error' : userForm.last_name.$invalid && !userForm.last_name.$pristine }">
             <label>Email *</label>
             <input type="email" name="email" class="form-control" ng-model="contact.email" required>
-            <p class="invalid-feedback" ng-show="userForm.email.$error.required && userForm.email.$touched">Email is required.</p>
-            <p class="invalid-feedback" ng-show="userForm.email.$error.email && userForm.email.$touched">Enter a valid email.</p>
+            <p class="help-block" ng-show="userForm.email.$error.required && userForm.email.$touched">Email is required.</p>
+            <p class="help-block" ng-show="userForm.email.$error.email && userForm.email.$touched">Enter a valid email.</p>
         </div>
 
         <div class="form-group">
 	      <label>Country</label>
 		      <select class="custom-select" name="country" ng-model="contact.country" required>
-		        <option value="" disabled selected="">Select the country</option>
+		        <option value="" disabled selected>Select the country</option>
 		        <option ng-repeat="code in countries.getCodes()" value="{{code}}">{{countries.getName(code)}}</option>
 		      </select>
    		</div>

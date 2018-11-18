@@ -25,12 +25,8 @@ var addressApp = angular.module('addressApp', ['ngRoute'])
 	}else{
 		$scope.contacts= [
 			new Contact({first_name: "Camila", last_name: "Aguado", email: "camiaguado@gmail.com", country: "AR"}),
-			new Contact({first_name: "Manuel", last_name: "Perez", email: "manuperez@gmail.com", country: "BR"}),
-			new Contact({first_name: "Jose", last_name: "Escudero", email: "jose_escudero@gmail.com", country: "BR"}),
-			new Contact({first_name: "Luis", last_name: "Bolivar", email: "luis@gmail.com", country: "AR"}),
 		];
 	}
-	console.log($scope.contacts);
 })
 
 
@@ -52,9 +48,10 @@ var addressApp = angular.module('addressApp', ['ngRoute'])
 	$scope.goList = function(){
 		$location.path("/");
 	}
-	$scope.countries = window.countries;
+	$scope.countries = window.countries; 
 	$scope.new = true;
 	var id_param = Number($routeParams.id);	
+
 	if(!_.isNaN(id_param)){
 		$scope.savedContact = _.find($scope.contacts, function(obj){
 			return obj.id == id_param;
