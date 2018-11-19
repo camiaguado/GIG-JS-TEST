@@ -21,5 +21,7 @@ $ npm install
 $ node server.js
 ```
 
+Open the app:
+
 [Localhost](http://localhost:3002)
 
