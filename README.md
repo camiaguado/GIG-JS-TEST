@@ -1,6 +1,5 @@
 # GIG-JS-TEST
-Address book using JavaScript, CSS, HTML and Angular
-
+Single Page Application (SPA) address book using JavaScript, HTML and CSS.
 
 ### Installation
 
